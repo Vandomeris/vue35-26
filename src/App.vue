@@ -1,19 +1,36 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
+import type { EditingInput, Todo } from './types/types'
 
-const todos = ref([
-  { id: 1, title: 'Убраться в доме', completed: false },
-  { id: 2, title: 'Покормить кота', completed: false },
-  { id: 3, title: 'Купить корм коту', completed: true },
-])
+const todos = ref<Todo[]>([])
 
-const showAdd = ref(false)
+onMounted(() => {
+  if (localStorage.getItem('todos')) {
+    todos.value = JSON.parse(localStorage.getItem('todos')!)
+  }
+  console.log(todos.value)
+})
 
-const newTodo = ref('')
+watch(
+  () => todos.value,
+  () => {
+    localStorage.setItem('todos', JSON.stringify(todos.value))
+  },
+  {
+    deep: true,
+  },
+)
 
-const showModal = ref(false)
+const showAdd = ref<boolean>(false)
 
-const editingInput = ref('')
+const newTodo = ref<string>('')
+
+const showModal = ref<boolean>(false)
+
+const editingInput = ref<EditingInput>({
+  id: 0,
+  text: '',
+})
 
 function addTodo() {
   todos.value.push({
@@ -37,10 +54,19 @@ function editTodo(id: number) {
   const index = todos.value.findIndex((todo) => todo.id === id)
 
   if (index !== -1) {
-    editingInput.value = todos.value[index]!.title
+    editingInput.value.id = id
+    editingInput.value.text = todos.value[index]!.title
   }
 
   showModal.value = true
+}
+
+function saveTodo() {
+  const index = todos.value.findIndex((todo) => todo.id === editingInput.value.id)
+
+  todos.value[index]!.title = editingInput.value.text
+
+  showModal.value = false
 }
 </script>
 
@@ -71,11 +97,12 @@ function editTodo(id: number) {
     <button @click="deleteTodo(todo.id)">Delete</button>
     <button @click="editTodo(todo.id)">Edit</button>
   </div>
-  <div v-if="showModal" class="modal-overlay">
-    <div class="modal">
+  <div v-if="showModal" @click="showModal = false" class="modal-overlay">
+    <div class="modal" @click.stop>
+      <button @click="showModal = false">X</button>
       <h3>Редактировать дело</h3>
-      <form>
-        <input v-model="editingInput" type="text" />
+      <form @submit.prevent="saveTodo()">
+        <input v-model="editingInput.text" type="text" />
         <button>Сохранить</button>
       </form>
     </div>
