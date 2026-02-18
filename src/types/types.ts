@@ -8,3 +8,16 @@ export interface Todo {
   title: string
   completed: boolean
 }
+
+export interface Product {
+  id: string
+  title: string
+  category: string
+  price: number
+  oldPrice: number
+  brand: string
+  inStock: boolean
+  rating: number
+  description: string
+  image: string
+}

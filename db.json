@@ -1,0 +1,100 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "Nike Air Max 90",
+      "category": "Кроссовки",
+      "price": 7000,
+      "oldPrice": 8990,
+      "brand": "Nike",
+      "inStock": true,
+      "rating": 4.7,
+      "description": "Классические кроссовки с амортизацией Air Max.",
+      "image": "https://example.com/images/nike-air-max-90.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Футболка хлопковая",
+      "category": "Верхняя одежда",
+      "price": 1500,
+      "oldPrice": 1990,
+      "brand": "Uniqlo",
+      "inStock": true,
+      "rating": 4.5,
+      "description": "Мягкая хлопковая футболка с круглым вырезом.",
+      "image": "https://example.com/images/cotton-tshirt.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Adidas Ultraboost 22",
+      "category": "Кроссовки",
+      "price": 12990,
+      "oldPrice": 15990,
+      "brand": "Adidas",
+      "inStock": false,
+      "rating": 4.9,
+      "description": "Беговые кроссовки с технологией Boost для максимальной энергии.",
+      "image": "https://example.com/images/adidas-ultraboost-22.jpg"
+    },
+    {
+      "id": "4",
+      "title": "Джинсы Slim Fit",
+      "category": "Брюки",
+      "price": 3490,
+      "oldPrice": 4990,
+      "brand": "Levi's",
+      "inStock": true,
+      "rating": 4.6,
+      "description": "Узкие джинсы из высококачественного денима.",
+      "image": "https://example.com/images/levis-slim-fit.jpg"
+    },
+    {
+      "id": "5",
+      "title": "Пуховик зимний",
+      "category": "Верхняя одежда",
+      "price": 8990,
+      "oldPrice": 11990,
+      "brand": "The North Face",
+      "inStock": true,
+      "rating": 4.8,
+      "description": "Теплый пуховик для экстремально низких температур.",
+      "image": "https://example.com/images/north-face-puffer.jpg"
+    },
+    {
+      "id": "6",
+      "title": "Рюкзак городской",
+      "category": "Аксессуары",
+      "price": 2990,
+      "oldPrice": 3990,
+      "brand": "Herschel",
+      "inStock": true,
+      "rating": 4.7,
+      "description": "Стильный рюкзак с отделением для ноутбука.",
+      "image": "https://example.com/images/herschel-backpack.jpg"
+    },
+    {
+      "id": "7",
+      "title": "Часы наручные",
+      "category": "Аксессуары",
+      "price": 5490,
+      "oldPrice": 6990,
+      "brand": "Casio",
+      "inStock": true,
+      "rating": 4.8,
+      "description": "Водонепроницаемые часы с хронографом.",
+      "image": "https://example.com/images/casio-watch.jpg"
+    },
+    {
+      "id": "8",
+      "title": "Кепка бейсболка",
+      "category": "Аксессуары",
+      "price": 1200,
+      "oldPrice": 1590,
+      "brand": "New Era",
+      "inStock": false,
+      "rating": 4.4,
+      "description": "Регулируемая бейсболка с вышитым логотипом.",
+      "image": "https://example.com/images/new-era-cap.jpg"
+    }
+  ]
+}
