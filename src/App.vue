@@ -5,6 +5,7 @@
     <nav class="flex gap-x-5">
       <RouterLink to="/">Главная</RouterLink>
       <RouterLink to="/todos">Список дел</RouterLink>
+      <RouterLink to="/exchange">Обмен валют</RouterLink>
     </nav>
   </header>
 
