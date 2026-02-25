@@ -1,8 +1,11 @@
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue'
+import { onMounted, provide, ref, watch } from 'vue'
 import type { EditingInput, Todo } from '../types/types'
+import TodoAdd from '@/components/TodoAdd.vue'
 
 const todos = ref<Todo[]>([])
+
+provide('todos', todos)
 
 onMounted(() => {
   if (localStorage.getItem('todos')) {
@@ -21,26 +24,12 @@ watch(
   },
 )
 
-const showAdd = ref<boolean>(false)
-
-const newTodo = ref<string>('')
-
 const showModal = ref<boolean>(false)
 
 const editingInput = ref<EditingInput>({
   id: 0,
   text: '',
 })
-
-function addTodo() {
-  todos.value.push({
-    id: Date.now(),
-    completed: false,
-    title: newTodo.value,
-  })
-
-  newTodo.value = ''
-}
 
 function deleteTodo(id: number) {
   const index = todos.value.findIndex((todo) => todo.id === id)
@@ -73,17 +62,7 @@ function saveTodo() {
 <template>
   <h1>ToDo List</h1>
 
-  <div>
-    <button @click="showAdd = !showAdd">
-      {{ showAdd ? 'Отмена' : 'Добавить дело  ' }}
-    </button>
-
-    <form v-if="showAdd" @submit.prevent="addTodo()">
-      <input v-model="newTodo" type="text" placeholder="Введите дело" />
-      <button>Создать</button>
-    </form>
-    <div v-else>Подсказка: нажмите на кнопку сверху</div>
-  </div>
+  <TodoAdd />
 
   <div
     class="todo-item"
