@@ -1,3 +1,17 @@
+{
+"Template and script setup TS": {
+"prefix": "base",
+"body": [
+"<template>",
+"<h1>$TM_FILENAME_BASE</h1>",
+"</template>",
+"",
+"<script setup lang='ts'></script>"
+],
+"description": "Print base tags for Vue SFC"
+}
+}
+
 # vue35-26
 
 This template should help get you started developing with Vue 3 in Vite.
