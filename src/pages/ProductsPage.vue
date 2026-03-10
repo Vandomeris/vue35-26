@@ -1,11 +1,12 @@
 <template>
-  <h1>Каталог товаров</h1>
-
-  <div v-if="products.length" class="grid grid-cols-5 gap-5">
-    <ProductCard v-for="product in products" :key="product.id" :product="product" />
-  </div>
-  <div v-else>
-    <div>Loading....</div>
+  <div>
+    <h1>Каталог товаров</h1>
+    <div v-if="products.length" class="grid grid-cols-5 gap-5">
+      <ProductCard v-for="product in products" :key="product.id" :product="product" />
+    </div>
+    <div v-else>
+      <div>Loading....</div>
+    </div>
   </div>
 </template>
 

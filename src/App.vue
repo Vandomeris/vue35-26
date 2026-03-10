@@ -12,7 +12,9 @@
   </header>
 
   <main class="mx-auto container">
-    <RouterView />
+    <Transition appear>
+      <RouterView />
+    </Transition>
   </main>
 </template>
 

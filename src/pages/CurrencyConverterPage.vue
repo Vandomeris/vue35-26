@@ -1,16 +1,16 @@
 <template>
-  <h1>Обмен валют</h1>
-  <div class="flex items-center gap-x-10">
-    <input v-model="ruble" type="number" placeholder="Rubles" />
-
-    <select v-model="valuta">
-      <option value="dollar">Доллар</option>
-      <option value="euro">Евро</option>
-    </select>
-
-    <div>
-      <p>Получите валюты</p>
-      <p>{{ result.toFixed(2) }}</p>
+  <div>
+    <h1>Обмен валют</h1>
+    <div class="flex items-center gap-x-10">
+      <input v-model="ruble" type="number" placeholder="Rubles" />
+      <select v-model="valuta">
+        <option value="dollar">Доллар</option>
+        <option value="euro">Евро</option>
+      </select>
+      <div>
+        <p>Получите валюты</p>
+        <p>{{ result.toFixed(2) }}</p>
+      </div>
     </div>
   </div>
 </template>

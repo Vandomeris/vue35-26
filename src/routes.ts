@@ -5,6 +5,8 @@ import ProductsPage from './pages/ProductsPage.vue'
 import SingleProductPage from './pages/SingleProductPage.vue'
 import CurrencyConverterPage from './pages/CurrencyConverterPage.vue'
 import CartPage from './pages/CartPage.vue'
+import PlaygroundPage from './pages/PlaygroundPage.vue'
+import OrderPage from './pages/OrderPage.vue'
 
 const routes = [
   { path: '/', component: IndexPage },
@@ -13,6 +15,8 @@ const routes = [
   { path: '/products/:id', component: SingleProductPage },
   { path: '/exchange', component: CurrencyConverterPage },
   { path: '/cart', component: CartPage },
+  { path: '/pg', component: PlaygroundPage },
+  { path: '/order', component: OrderPage },
 ]
 
 export const router = createRouter({

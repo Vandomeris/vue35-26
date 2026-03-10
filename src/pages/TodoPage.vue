@@ -60,30 +60,30 @@ function saveTodo() {
 </script>
 
 <template>
-  <h1>ToDo List</h1>
-
-  <TodoAdd />
-
-  <div
-    class="todo-item"
-    :class="{ completed: todo.completed }"
-    v-for="todo in todos"
-    :key="todo.id"
-  >
-    <span>{{ todo.id }}</span>
-    <span>{{ todo.title }}</span>
-    <input type="checkbox" v-model="todo.completed" />
-    <button @click="deleteTodo(todo.id)">Delete</button>
-    <button @click="editTodo(todo.id)">Edit</button>
-  </div>
-  <div v-if="showModal" @click="showModal = false" class="modal-overlay">
-    <div class="modal" @click.stop>
-      <button @click="showModal = false">X</button>
-      <h3>Редактировать дело</h3>
-      <form @submit.prevent="saveTodo()">
-        <input v-model="editingInput.text" type="text" />
-        <button>Сохранить</button>
-      </form>
+  <div>
+    <h1>ToDo List</h1>
+    <TodoAdd />
+    <div
+      class="todo-item"
+      :class="{ completed: todo.completed }"
+      v-for="todo in todos"
+      :key="todo.id"
+    >
+      <span>{{ todo.id }}</span>
+      <span>{{ todo.title }}</span>
+      <input type="checkbox" v-model="todo.completed" />
+      <button @click="deleteTodo(todo.id)">Delete</button>
+      <button @click="editTodo(todo.id)">Edit</button>
+    </div>
+    <div v-if="showModal" @click="showModal = false" class="modal-overlay">
+      <div class="modal" @click.stop>
+        <button @click="showModal = false">X</button>
+        <h3>Редактировать дело</h3>
+        <form @submit.prevent="saveTodo()">
+          <input v-model="editingInput.text" type="text" />
+          <button>Сохранить</button>
+        </form>
+      </div>
     </div>
   </div>
 </template>
