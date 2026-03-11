@@ -2,7 +2,12 @@
   <div>
     <h1>CartPage</h1>
     <div v-if="cart?.length">
-      <CartItem v-for="product in cart" :product="product" :key="product.id" />
+      <CartItem
+        v-for="product in cart"
+        :product="product"
+        :key="product.id"
+        @delete="deleteFromCart($event)"
+      />
     </div>
   </div>
 </template>

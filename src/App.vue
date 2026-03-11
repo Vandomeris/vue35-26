@@ -8,6 +8,7 @@
       <RouterLink to="/exchange">Обмен валют</RouterLink>
       <RouterLink to="/products">Товары </RouterLink>
       <RouterLink to="/cart">Корзина </RouterLink>
+      <RouterLink to="/favourites">Избранное </RouterLink>
     </nav>
   </header>
 

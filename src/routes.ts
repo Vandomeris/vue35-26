@@ -7,6 +7,7 @@ import CurrencyConverterPage from './pages/CurrencyConverterPage.vue'
 import CartPage from './pages/CartPage.vue'
 import PlaygroundPage from './pages/PlaygroundPage.vue'
 import OrderPage from './pages/OrderPage.vue'
+import FavouritesPage from './pages/FavouritesPage.vue'
 
 const routes = [
   { path: '/', component: IndexPage },
@@ -15,6 +16,7 @@ const routes = [
   { path: '/products/:id', component: SingleProductPage },
   { path: '/exchange', component: CurrencyConverterPage },
   { path: '/cart', component: CartPage },
+  { path: '/favourites', component: FavouritesPage },
   { path: '/pg', component: PlaygroundPage },
   { path: '/order', component: OrderPage },
 ]
